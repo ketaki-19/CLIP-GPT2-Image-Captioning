@@ -56,8 +56,11 @@ The model file is too large for GitHub and is hosted on Google Drive:
 | File | Description | Link |
 |------|-------------|------|
 | `improved_prefix_best.pt` | Best captioning model (~513 MB) | [Download](https://drive.google.com/file/d/1Z0T6DZlWc55uOZVx9nGdve_KtSdokHCj/view?usp=sharing) |
+| `prefix_weights.pt` | Prefix conditioning model (~490 MB) | [Download](https://drive.google.com/file/d/1bBe4j5j1S9PTppCWJidKB03kozyQUaYk/view?usp=sharing) |
+| `cross_attn_weights.pt` | Cross-attention model (~486 MB) | [Download](https://drive.google.com/file/d/1KuVSKnFtWjkdlYawO33_m8a0smADfVff/view?usp=sharing) |
+| `lora_weights.pt` | LoRA fine-tuned model (~491 MB) | [Download](https://drive.google.com/file/d/1q3-bb_GED3hMBNczER_vJh-7bMZ0HFiX/view?usp=sharing) |
 
-Download and place it in the same directory as the notebook before running.
+Download and place them in the same directory as the notebook before running.
 
 ---
 
