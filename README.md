@@ -60,7 +60,8 @@ The `.pt` model files are too large for GitHub and are hosted on Google Drive:
 | File | Description | Link |
 |------|-------------|------|
 | `improved_prefix_best.pt` | Best captioning model (~513 MB) | [Download](https://drive.google.com/file/d/1Z0T6DZlWc55uOZVx9nGdve_KtSdokHCj/view?usp=sharing) |
-| `vqa_weights.pt` | VQA model weights (~495 MB) | [Download](https://drive.google.com/file/d/1xRFBTRdADj7PGuBZpf4whu_n730993t4/view?usp=sharing) |
+
+> `vqa_weights.pt` is no longer needed — VQA now uses the pretrained ViLT model loaded directly from Hugging Face.
 
 Download and place them in the same directory as the notebook before running.
 
@@ -75,22 +76,9 @@ The VQA module answers questions like:
 - *"What color is the main object?"*
 - *"Where is this taking place?"*
 
-Two approaches are implemented:
+Powered by **ViLT** (`dandelin/vilt-b32-finetuned-vqa`), a Vision-and-Language Transformer fine-tuned on VQAv2 — lightweight, CPU-friendly, and accurate.
 
-| Approach | Model | Notes |
-|----------|-------|-------|
-| Custom | CLIP + GPT-2 prefix | Trained on auto-generated QA pairs from Flickr8k captions |
-| Pretrained | ViLT (`dandelin/vilt-b32-finetuned-vqa`) | CPU-friendly, plug-and-play |
-
-### VQA Training Results
-
-| Epoch | Loss |
-|-------|------|
-| 1 | 1.4536 |
-| 2 | 1.0481 |
-| 3 | 0.9042 |
-| 4 | 0.7820 |
-| 5 | 0.6641 |
+**CLIP** is used as a retrieval layer: given a text query, it finds the most visually relevant images from the Flickr8k pool before passing them to ViLT for answering.
 
 ---
 
@@ -149,7 +137,7 @@ with torch.no_grad():
 |-----------|------------|
 | Image Encoder | CLIP ViT-B/32 (OpenAI) |
 | Text Generator | GPT-2 (Hugging Face) |
-| VQA (pretrained) | ViLT `dandelin/vilt-b32-finetuned-vqa` |
+| VQA | ViLT `dandelin/vilt-b32-finetuned-vqa` (fine-tuned on VQAv2) |
 | Training | PyTorch, AdamW, AMP (mixed precision) |
 | Dataset | Flickr8k via Hugging Face Datasets |
 | Environment | Google Colab (GPU) |
