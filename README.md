@@ -59,8 +59,8 @@ The `.pt` model files are too large for GitHub and are hosted on Google Drive:
 
 | File | Description | Link |
 |------|-------------|------|
-| `improved_prefix_best.pt` | Best captioning model (~513 MB) | *(Add your Google Drive link here)* |
-| `vqa_weights.pt` | VQA model weights (~495 MB) | *(Add your Google Drive link here)* |
+| `improved_prefix_best.pt` | Best captioning model (~513 MB) | [Download](https://drive.google.com/file/d/1Z0T6DZlWc55uOZVx9nGdve_KtSdokHCj/view?usp=sharing) |
+| `vqa_weights.pt` | VQA model weights (~495 MB) | [Download](https://drive.google.com/file/d/1xRFBTRdADj7PGuBZpf4whu_n730993t4/view?usp=sharing) |
 
 Download and place them in the same directory as the notebook before running.
 
